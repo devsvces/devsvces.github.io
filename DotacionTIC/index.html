@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.css" rel="stylesheet" />
+    <!-- MDB -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.js"></script>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+      <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <link rel="stylesheet" href="Styles.css">
+    <base target="_top">
+  </head>
+  <body>
+    <!--Controles de filtro-->
+    <div class="filtros m-3">
+      <div class="row">
+        <div class="col">
+          <label>Equipo</label>
+          <select class="form-select" id="equipo" onchange="filtrar()">
+            <option disabled selected>Selecciona</option>
+              <? for(var i=0; i<equipos.length; i++){?>
+                <option><?=  equipos[i];?></option>
+              <? } ?>
+          </select>
+        </div>
+        <div class="col">
+          <label>CIS</label>
+          <input class="form-control" id="cis" onkeyup="filtrar()">
+        </div>
+        <div class="col">
+          <label>Nombre Usuario</label>
+          <input class="form-control" id="usuario" onkeyup="filtrar()">
+        </div>
+        <div class="col">
+          <label>Cargo Usuario</label>
+          <input class="form-control" id="cargo" onkeyup="filtrar()">
+        </div>
+        <div class="col">
+          <label>Nombre Responsable</label>
+          <input class="form-control" id="responsable" onkeyup="filtrar()">
+        </div>
+      </div>
+    </div>
+
+    <!--Tabla-->
+    <div class="contenido m-3 border" id="cajon">
+
+      <div class="row">
+        <p id="carga" class="fs-5">Cargando informacion...</p>
+      </div>
+
+      <table class="table pt-2 m-2" id="tabla">
+        
+        <tbody id="result" style="height: 450px;" class="border">
+          
+        </tbody>
+      </table>
+
+      
+    </div>
+    <script src="dselect.js"></script>
+    <script src="Querys.js"></script>
+    <script src="cDotacion.js"></script>
+    
+  </body>
+</html>
