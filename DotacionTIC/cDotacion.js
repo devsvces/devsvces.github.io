@@ -2,7 +2,7 @@
     var table = ""
     var head = ""
     var datosTabla = [];
-
+    alert(localStorage.getItem("nombre"))
     const config = {
       search: true, // Toggle search feature. Default: false 
       maxHeight: '300px', // Max height for showing scrollbar. Default: 360px
